@@ -15,6 +15,16 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = 'layout1';
         return $this->render('index');
     }
+
+    /***
+     * @return string
+     */
+    public function actionAdd(){
+        $this->layout = 'layout1';
+        return $this->render('add');
+    }
+
 }
