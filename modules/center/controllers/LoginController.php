@@ -7,12 +7,14 @@
  */
 
 namespace app\modules\center\controllers;
+use app\api\model\Product;
 use yii\web\Controller;
 
 class LoginController extends Controller
 {
       public function actionIndex(){
           $this->layout = false;
-          return $this->render('index');
+          $model = new Product();
+          return $this->render('index',['model'=>$model]);
       }
 }

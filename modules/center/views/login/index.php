@@ -1,3 +1,6 @@
+<?php
+use yii\bootstrap\ActiveForm;
+?>
 <!doctype html>
 <html>
 
@@ -31,6 +34,7 @@
 
 
         <div class="am-u-sm-10 login-am-center">
+            <? $form = ActiveForm::begin();?>
             <form class="am-form">
                 <fieldset>
                     <div class="am-form-group">
@@ -41,6 +45,7 @@
                     </div>
                     <p><button type="button" class="am-btn am-btn-default"  id="backLoginSubmit">登录</button></p>
                 </fieldset>
+            <? ActiveForm::end();?>
             </form>
         </div>
     </div>

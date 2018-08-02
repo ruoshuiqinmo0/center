@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <!doctype html>
 <html>
 
@@ -65,7 +68,7 @@
                 </li>
                 <li class="tpl-left-nav-item">
                     <!-- 打开状态 a 标签添加 active 即可   -->
-                    <a href=""  class="nav-link tpl-left-nav-link-list">
+                    <a href="<?php echo Url::to(['product/index'])?>"  class="nav-link tpl-left-nav-link-list  <?php if(\Yii::$app->controller->id == 'product'){echo 'active';}?>">
                     <i class="am-icon-wrench"></i>
                     <span>产品管理</span>
                     <!-- 列表打开状态的i标签添加 tpl-left-nav-more-ico-rotate 图表即90°旋转  -->
@@ -80,13 +83,13 @@
                     <ul class="tpl-left-nav-sub-menu" >
                         <li>
                             <!-- 打开状态 a 标签添加 active 即可   -->
-                            <a href="" >
+                            <a href="<?php echo Url::to(['developer/income'])?>" >
                                 <i class="am-icon-angle-right"></i>
                                 <span>开发者收益</span>
                                 <i class=" tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
-                            <a href="">
+                            <a href="<?php echo Url::to(['developer/liveTime'])?>">
                                 <i class="am-icon-angle-right"></i>
                                 <span>开发者收益实时查询</span>
                                 <i class=" tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -95,7 +98,7 @@
                     </ul>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="" class="nav-link tpl-left-nav-link-list" >
+                    <a href="<?php echo Url::to(['datum/download'])?>" class="nav-link tpl-left-nav-link-list" >
                         <i class="am-icon-wpforms"></i>
                         <span>下载</span>
 
