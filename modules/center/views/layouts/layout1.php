@@ -49,9 +49,10 @@ use yii\helpers\Url;
             </li>
             <li>
 
-                <a href="">
+                <a href="<?php echo yii\helpers\Url::to(['login/layout']);?>">
                     <span class="am-icon-sign-out tpl-header-list-ico-out-size"></span>
-                    退出</a>
+                    退出
+                </a>
             </li>
         </ul>
     </div>

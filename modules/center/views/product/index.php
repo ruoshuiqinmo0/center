@@ -1,6 +1,8 @@
+<?php
+use yii\widgets\LinkPager;
+?>
 <div class="tpl-content-wrapper">
-
-        <ol class="am-breadcrumb">
+         <ol class="am-breadcrumb">
 
             <li><a href="" class="am-icon-home">首页</a></li>
             <li><a href="#">产品管理</a></li>
@@ -10,24 +12,20 @@
             <div class="tpl-block">
                 <div class="am-g">
                     <form class="am-form" action="" method="get">
-                        <!-- <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-u-sm-12 am-u-md-6">
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-
-	                               	<a class="am-btn am-btn-default am-btn-xs am-text-success"  href="{:U('sendMsg',array('test_id'=>$vo['test_id']))}">
-	                                	<span class="am-icon-weixin"></span>微信课程消息
-	                                </a>
-
+                                    <a class="am-btn am-btn-default am-btn-success" href="<?php echo yii\helpers\Url::to(['add']) ?>"><span class="am-icon-plus"></span> 新增</a>
+                                    <button type="button" class="am-btn am-btn-default am-btn-danger del" ><span class="am-icon-trash-o"></span> 删除</button>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="am-u-sm-12 am-u-md-3 am-u-md-offset-6">
                             <div class="am-form-group am-input-group-sm">
                                 <input type="hidden" name="class_id" value="{$_GET['class_id']}" />
                                 <select  name="classes_id">
-                                    <option value=''>请选择班级</option>
+                                    <option value=''>请选择</option>
                                     <option value="{$vo.class_id}" <if condition="$_GET['classes_id'] eq $vo['class_id']" >selected="true"</if> >{$vo.class_name}</option>
-
                                 </select>
                             </div>
                         </div>
@@ -60,6 +58,7 @@
                             </tr>
                             </thead>
                             <tbody>
+
                                 <tr>
                                     <td><input type="checkbox" name="id" value="{$vo.file_id}"></td>
                                     <td>{$vo.class_name}</td>
@@ -90,7 +89,7 @@
                             </tbody>
                         </table>
                         <div class="am-cf">
-
+                            <?php echo LinkPager::widget(['pagination'=>$pages])?>
                         </div>
                     </div>
                 </div>
